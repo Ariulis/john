@@ -1,0 +1,65 @@
+@import "utils/libs";
+@import "utils/vars";
+@import "utils/mixins";
+@import "utils/fonts";
+@import "utils/null";
+@import "utils/sprite";
+@import "utils/iconfont.scss";
+//@include sprites($spritesheet-sprites);
+
+html {
+  font-family: $mainFont;
+  font-size: $base-font-size;
+}
+
+a {
+  color: $colorDark;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: $content;
+  padding: 0 15px;
+  width: 100%;
+}
+
+.ibg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  img {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.page-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  &__spinner {
+    height: 30px;
+    width: 30px;
+    background: #fff url("../images/preloader.gif") center / cover no-repeat;
+  }
+}
+
+//Модули
+@import "modules/modules";

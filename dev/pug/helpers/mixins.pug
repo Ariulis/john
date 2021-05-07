@@ -1,0 +1,116 @@
+mixin icon(name,mod)
+    if(mod)
+        svg(class="svg-sprite-icon icon-" + name + ' ' + mod)
+            use(xlink:href="static/images/sprite/symbol/sprite.svg#" + name)
+    else
+        svg(class="svg-sprite-icon icon-" + name)
+            use(xlink:href="static/images/sprite/symbol/sprite.svg#" + name)
+
+mixin accordion 
+    +b.accordion 
+        each item in content.accordion 
+            +e.item
+                +e.header= item.btn
+                +e.body
+                    +e.body-content
+                        +e.H4.body-title= item.title 
+                        +e.P.body-text= item.text
+
+mixin tabs 
+    +b.tabs 
+        +e.header 
+            each h in content.tabs.tabsTriggers
+                if h.isActive 
+                    +e.tab-h.active(data-tab= h.dataTab)= h.title
+                else
+                    +e.tab-h(data-tab= h.dataTab)= h.title
+        +e.body
+            each t in content.tabs.tabsBody
+                if t.isActive 
+                    +e.tab-b.active= t.text
+                else
+                    +e.tab-b= t.text
+
+mixin formElements
+    +b.FORM(action="#").form
+        +e.INPUT(type='hidden' name='admin_email[]' value='stylev38@gmail.com')
+        +e.INPUT(type='hidden' name='subject' value='The bid from the site')
+        +e.input-wrapper
+            +e.INPUT(type='text' name='initials' data-validate-field='initials').input
+        +e.input-wrapper
+            +e.INPUT(type='email' name='email' data-validate-field='email').input
+        +e.input-wrapper
+            +e.INPUT(type='tel' name='tel' data-validate-field='tel').input
+        +b.number-inside
+            p
+                +e.LABEL(for='number-inside').label Number inside
+            +e.input-wrapper
+                +e.BUTTON(type='button').minus
+                +e.INPUT(type='number' name='number1' id='number-inside' value='10').input
+                +e.BUTTON(type='button').plus
+        +b.number-outside
+            p
+                +e.LABEL(for='number-outside').label Number outside
+            +e.input-wrapper
+                +e.BUTTON(type='button').minus -
+                +e.INPUT(type='number' name='number1' id='number-outside' value='10').input
+                +e.BUTTON(type='button').plus +
+        +b.range-slider
+            +e.H4.title Range slider
+            +e.slider
+            +e.inputs
+                +e.LABEL.label
+                    +e.INPUT(type='number' min='500' max='9999' placeholder='500').input#input-0
+                +e.LABEL.label
+                    +e.INPUT(type='number' min='500' max='9999' placeholder='9999').input#input-1
+        +b.range
+            +e.H4.title Range
+            +e.slider
+        +b.checkbox
+            p 
+                +e.INPUT(type='checkbox' id='checkbox' name='checkbox').custom-checkbox
+                +e.LABEL(for='checkbox').label Checkbox
+        +b.radio
+            p 
+                +e.INPUT(type='radio' name='radio' value='mail' id='mail' checked).custom-radio
+                +e.LABEL(for='mail').label Mail
+            p 
+                +e.INPUT(type='radio' name='radio' value='femail' id='femail').custom-radio
+                +e.LABEL(for='femail').label Femail
+        +b.select
+            +e.SELECT.select(name='select')
+                each item in content.options
+                    +e.OPTION(value= item.value)= item.title
+        +e.BUTTON(type='submit').btn
+            span Submit form
+
+mixin filter 
+    +b.filter 
+        +e.header
+            +e.UL.list 
+                each item in content.filter.filterHeader
+                    if item.isActive
+                        +e.LI(class='item active' data-filter= item.dataFilter)= item.title
+                    else 
+                        +e.LI(class='item' data-filter= item.dataFilter)= item.title
+        +e.body 
+            each item in content.filter.filterBody
+                +e.A(href="#" class=`image ${item.category}`)
+                    img(src= item.src, alt= item.alt)
+
+mixin slider
+    .slider
+        .swiper-button-prev
+        .swiper-button-next
+        .swiper-container
+            .swiper-wrapper
+                each item in content.slider
+                    .swiper-slide
+                        a(href= item.imageSrc data-fslightbox="gallery")
+                            img(src= item.imageSrc alt='')
+            .swiper-pagination
+
+mixin counter 
+    p.counter 0
+    progress.counter-progress()
+    button.counter-trigger Start

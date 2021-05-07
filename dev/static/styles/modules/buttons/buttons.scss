@@ -1,0 +1,44 @@
+// goTopButton
+
+.go-top {
+  display: none;
+  position: fixed;
+  bottom: 25px;
+  right: 10px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #c0c0c0 url("../images/content/icons/arrow-up.svg") center center /
+    30px 30px no-repeat;
+  z-index: 1;
+  &:hover {
+    border: 3px solid #333;
+  }
+  &.go-top-entrance {
+    animation: goTopFadeIn 0.3s ease-in-out forwards;
+  }
+  &.go-top-exit {
+    animation: goTopFadeOut 0.3s ease-in-out forwards;
+  }
+}
+@keyframes goTopFadeIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes goTopFadeOut {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+}
