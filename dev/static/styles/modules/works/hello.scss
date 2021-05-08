@@ -1,0 +1,60 @@
+.hello {
+  margin-top: 38px;
+  @media (max-width: $md) {
+    margin-top: 0;
+  }
+  @include adaptive-value("margin-bottom", 71, 36);
+  &__container {
+    @extend .container;
+    display: flex;
+    @media (max-width: $sm) {
+      flex-direction: column-reverse;
+      text-align: center;
+      align-items: center;
+    }
+  }
+  &__content {
+    align-items: flex-start;
+    flex: 1 1 auto;
+    padding: 18px 110px 0 0;
+    @media (max-width: $md) {
+      padding: 0 50px 0 0;
+    }
+    *:last-child {
+      margin-bottom: 0;
+    }
+    @media (max-width: $sm) {
+      padding: 0;
+    }
+  }
+  &__avatar {
+    @include adaptive-value("height", 243, 170);
+    @include adaptive-value("width", 243, 170);
+    @include adaptive-value("flex-basis", 243, 170);
+    flex-grow: 0;
+    flex-shrink: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: -5px 13px 0 0 #edf7fa;
+    img {
+      max-width: 100%;
+      width: 100%;
+    }
+    @media (max-width: $sm) {
+      margin-bottom: 35px;
+    }
+  }
+  &__title {
+    @include r-font(44, 32);
+    font-size: 44px;
+    line-height: 60 / 44 * 100%;
+    font-weight: 700;
+    @include adaptive-value("margin-bottom", 35, 20);
+  }
+  &__text {
+    @include adaptive-value("margin-bottom", 36, 18);
+  }
+}
+.text {
+  line-height: 23 / 16 * 100%;
+}

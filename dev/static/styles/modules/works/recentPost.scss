@@ -1,0 +1,84 @@
+body {
+  &.pc {
+    .recent-posts {
+      &__view-all {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .recent-post {
+      &__title {
+        transition: color 0.3s ease 0s;
+        &:hover {
+          color: $colorPrimary;
+        }
+      }
+    }
+  }
+}
+.recent-posts {
+  background-color: $colorAquaSpring;
+  padding: 24px 0 16px;
+  &__container {
+    @extend .container;
+  }
+  &__header {
+    display: flex;
+    margin-bottom: 24px;
+  }
+  &__title {
+    flex: 1 1 100%;
+    padding-right: 20px;
+  }
+  &__view-all {
+    flex: 0 0 auto;
+    color: $colorSecondary;
+    line-height: 1.5;
+    @media (max-width: $sm) {
+      display: none;
+    }
+  }
+  &__items {
+    @media (min-width: $sm) {
+      display: flex;
+      margin: 0 -10px;
+    }
+  }
+  &__column {
+    margin-bottom: 16px;
+    @media (min-width: $sm) {
+      flex: 0 0 50%;
+      padding: 0 10px;
+    }
+  }
+}
+.recent-post {
+  background-color: #fff;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  &__title {
+    @include adaptive-value("font-size", 26, 22);
+    font-weight: bold;
+    line-height: 38 / 26 * 100%;
+    margin-bottom: 17px;
+    flex: 1;
+  }
+  &__info {
+    @include adaptive-value("font-size", 18, 16);
+    margin-bottom: 20px;
+    line-height: 26 / 18 * 100%;
+    span {
+      margin: 0 10px;
+    }
+  }
+}
+.title-posts {
+  font-size: 22px;
+  @media (max-width: $sm) {
+    font-size: 18px;
+    text-align: center;
+  }
+}
