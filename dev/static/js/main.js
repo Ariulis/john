@@ -7,6 +7,18 @@ const menuListLinks = document.querySelectorAll(".menu__link");
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(
   navigator.userAgent
 );
+const ibgElements = document.querySelectorAll(".ibg");
+
+// ibgElements
+
+for (let i = 0; i < ibgElements.length; i++) {
+  const element = ibgElements[i];
+  if (element.querySelector("img")) {
+    element.style.backgroundImage = `url(${element
+      .querySelector("img")
+      .getAttribute("src")})`;
+  }
+}
 
 // menuBurger click
 

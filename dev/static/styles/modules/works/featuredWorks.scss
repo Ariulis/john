@@ -1,0 +1,93 @@
+body {
+  &.pc {
+    .works {
+      &__title {
+        transition: color 0.3s ease 0s;
+        &:hover {
+          color: $colorPrimary;
+        }
+      }
+    }
+  }
+}
+.featured-works {
+  padding-top: 25px;
+  @include adaptive-value("padding-bottom", 80, 40);
+  &__title {
+    margin-bottom: 25px;
+  }
+  &__items {
+    @media (max-width: $sm) {
+      display: flex;
+      overflow-y: hidden;
+      overflow-x: auto;
+      .works__item {
+        flex: 0 0 90%;
+        margin-right: 15px;
+      }
+    }
+  }
+}
+.works {
+  @media (min-width: $sm) {
+    *:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__item {
+    @media (min-width: $sm) {
+      display: flex;
+      align-items: flex-start;
+    }
+    @include adaptive-value("padding-bottom", 30, 15);
+    @include adaptive-value("margin-bottom", 30, 15);
+    border-bottom: 2px solid $colorLight;
+  }
+  &__image {
+    display: block;
+    max-width: 246px;
+    width: 100%;
+    flex: 0 0 232px;
+    min-height: 180px;
+    border-radius: 5px;
+    @media (max-width: $sm) {
+      max-width: 100%;
+      padding-bottom: 50%;
+      margin-bottom: 15px;
+    }
+  }
+  &__body {
+    flex: 1 1 auto;
+    padding-left: 18px;
+    @media (max-width: $sm) {
+      padding: 0;
+    }
+  }
+  &__title {
+    @include r-font(30, 24);
+    line-height: 44 / 30 * 100%;
+    font-weight: bold;
+  }
+  &__info {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  &__year {
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    @include r-font(18, 16);
+    background-color: $colorBlueZodiac;
+    color: #fff;
+    padding: 2px 10px 0;
+    margin-right: 25px;
+    height: 25px;
+  }
+  &__category {
+    color: $colorLight;
+    @include r-font(20, 16);
+    line-height: 1.4;
+  }
+}

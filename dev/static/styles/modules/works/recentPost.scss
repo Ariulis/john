@@ -59,6 +59,9 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  *:last-child {
+    margin-bottom: 0;
+  }
   &__title {
     @include adaptive-value("font-size", 26, 22);
     font-weight: bold;
