@@ -45,16 +45,9 @@
     }
   }
   &__title {
-    @include r-font(44, 32);
-    font-size: 44px;
-    line-height: 60 / 44 * 100%;
-    font-weight: 700;
     @include adaptive-value("margin-bottom", 35, 20);
   }
   &__text {
     @include adaptive-value("margin-bottom", 36, 18);
   }
-}
-.text {
-  line-height: 23 / 16 * 100%;
 }

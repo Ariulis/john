@@ -1,0 +1,8 @@
+.footer {
+  text-align: center;
+  @include adaptive-value("padding-top", 50, 15);
+  @include adaptive-value("padding-bottom", 50, 25);
+  &__social {
+    margin-bottom: 25px;
+  }
+}

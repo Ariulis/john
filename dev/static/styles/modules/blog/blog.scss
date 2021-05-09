@@ -1,0 +1,34 @@
+.blog {
+  &__title {
+    @include adaptive-value("margin-bottom", 55, 30);
+  }
+}
+.blog-items {
+  &__item {
+    @include adaptive-value("padding-bottom", 30, 15);
+    @include adaptive-value("margin-bottom", 30, 15);
+    &:last-child {
+      margin-bottom: 30px;
+    }
+    border-bottom: 2px solid $colorLight;
+  }
+  &__title {
+    @extend %card-title;
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+  &__info {
+    margin-bottom: 15px;
+  }
+}
+.blog-item-info {
+  &__date {
+    @extend %date;
+  }
+  &__separator {
+    @extend %separator;
+  }
+  &__category {
+    @extend %category;
+  }
+}

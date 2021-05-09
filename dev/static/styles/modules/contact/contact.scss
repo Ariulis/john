@@ -1,0 +1,43 @@
+.contact {
+  &__title {
+    @extend %card-title;
+    display: inline-block;
+    @include adaptive-value("margin-bottom", 30, 15);
+    max-width: 470px;
+    width: 100%;
+  }
+  &__image {
+    padding-bottom: 55.5%;
+    &_first {
+      @include adaptive-value("margin-bottom", 55, 27);
+    }
+    &_second,
+    &_third {
+      margin-bottom: 20px;
+    }
+  }
+  &__text {
+    @include adaptive-value("margin-bottom", 45, 22);
+  }
+  h2 {
+    @include r-font(30, 26);
+    @include adaptive-value("margin-bottom", 30, 15);
+  }
+  h3 {
+    @include r-font(24, 20);
+    @include adaptive-value("margin-bottom", 30, 15);
+  }
+}
+.contact-info {
+  display: flex;
+  &__date {
+    @extend %card-date;
+    margin-right: 25px;
+    background-color: $colorPrimary;
+  }
+  &__category {
+    @include r-font(20, 16);
+    line-height: 1.4;
+    @include adaptive-value("margin-bottom", 30, 15);
+  }
+}

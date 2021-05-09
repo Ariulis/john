@@ -1,0 +1,47 @@
+extends layout/main
+
+block variables
+    -var title = 'Works'
+    -var link = 1
+
+block content
+    +b.SECTION.works-section
+        +e.container.container
+            +e.H1.title.title Work
+            +b.works.__items
+                +e.ARTICLE.item
+                    +e.A(href='#').image.ibg
+                        img(src="../static/images/content/works/features/01.jpg" alt="work #1")
+                    +e.body
+                        +e.A(href='#').title Designing Dashboards
+                        +e.info
+                            +e.year 2020
+                            +e.category Dashboard
+                        +e.text.text Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+                +e.ARTICLE.item
+                    +e.A(href='#').image.ibg
+                        img(src="../static/images/content/works/features/02.jpg" alt="work #1")
+                    +e.body
+                        +e.A(href='#').title Vibrant Portraits of 2020
+                        +e.info
+                            +e.year 2018
+                            +e.category Illustration
+                        +e.text.text Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+                +e.ARTICLE.item
+                    +e.A(href='#').image.ibg
+                        img(src="../static/images/content/works/features/03.jpg" alt="work #1")
+                    +e.body
+                        +e.A(href='#').title 36 Days of Malayalam type
+                        +e.info
+                            +e.year 2018
+                            +e.category Typography
+                        +e.text.text Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+                +e.ARTICLE.item
+                    +e.A(href='#').image.ibg
+                        img(src="../static/images/content/works/features/04.jpg" alt="work #1")
+                    +e.body
+                        +e.A(href='#').title Components
+                        +e.info
+                            +e.year 2018
+                            +e.category Components, Design
+                        +e.text.text Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.

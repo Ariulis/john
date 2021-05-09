@@ -8,6 +8,7 @@ const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile
   navigator.userAgent
 );
 const ibgElements = document.querySelectorAll(".ibg");
+const preloader = document.querySelector(".page-preloader");
 
 // ibgElements
 
@@ -45,4 +46,10 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     body.classList.add("pc");
   }
+
+  // preloader
+
+  setTimeout(function () {
+    preloader.style.display = "none";
+  }, 600);
 });

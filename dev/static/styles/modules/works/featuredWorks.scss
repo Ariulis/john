@@ -64,30 +64,20 @@ body {
     }
   }
   &__title {
-    @include r-font(30, 24);
-    line-height: 44 / 30 * 100%;
-    font-weight: bold;
+    @extend %card-title;
+    display: inline-block;
+    margin-bottom: 15px;
   }
   &__info {
     display: flex;
     margin-bottom: 20px;
   }
   &__year {
-    border-radius: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 900;
-    @include r-font(18, 16);
     background-color: $colorBlueZodiac;
-    color: #fff;
-    padding: 2px 10px 0;
     margin-right: 25px;
-    height: 25px;
+    @extend %card-date;
   }
   &__category {
-    color: $colorLight;
-    @include r-font(20, 16);
-    line-height: 1.4;
+    @extend %category;
   }
 }

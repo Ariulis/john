@@ -13,13 +13,16 @@ html(lang="ru-RU")
 		meta(name="viewport" content="width=device-width,initial-scale=1")
 		meta(name="keywords" content="")
 		link(rel="shortcut icon" type="image/x-icon" href="static/images/favicon.ico")
+		style.
+			.page-preloader{position:fixed;top:0;left:0;width:100%;height:100%;background-color:#fff;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;z-index:2}.page-preloader__spinner{height:30px;width:30px;background:#fff url("./static/images/preloader.gif") center/cover no-repeat}
 	body
 		// preloader
-		//- +b.page-preloader
-		//- 	+e.SPAN.spinner
+		+b.page-preloader
+			+e.SPAN.spinner
 		.wrapper
 			include ../modules/header/header
-			block content
+			main
+				block content
 			include ../modules/footer/footer
 		link(rel="stylesheet" type='text/css' href="static/css/styles.css")
 		script(src="https://polyfill.io/v3/polyfill.min.js")
