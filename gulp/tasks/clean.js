@@ -1,9 +1,9 @@
-const del = require('del');
+const del = require("del");
 
-// Полностью удаляем папку dist
+// Полностью удаляем папку docs
 
 module.exports = function clean(cb) {
-  return del('dist').then(() => {
-    cb()
-  })
+  return del("docs").then(() => {
+    cb();
+  });
 };

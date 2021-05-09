@@ -24,5 +24,5 @@ module.exports = function imageMinify() {
         }),
       ])
     )
-    .pipe(gulp.dest("dist/static/images/"));
+    .pipe(gulp.dest("docs/static/images/"));
 };

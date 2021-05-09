@@ -1,8 +1,9 @@
-const gulp = require('gulp');
+const gulp = require("gulp");
 
-// Копируем все шрифты из папки dev в dist
+// Копируем все шрифты из папки dev в docs
 
 module.exports = function fonts() {
-  return gulp.src('dev/static/fonts/**/*.*')
-    .pipe(gulp.dest('dist/static/fonts'))
+  return gulp
+    .src("dev/static/fonts/**/*.*")
+    .pipe(gulp.dest("docs/static/fonts"));
 };

@@ -23,5 +23,5 @@ module.exports = function pug2html() {
     )
     .pipe(plumber.stop())
     .pipe(gulpif(argv.prod, htmlValidator()))
-    .pipe(gulp.dest("dist"));
+    .pipe(gulp.dest("docs"));
 };

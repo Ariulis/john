@@ -14,7 +14,7 @@ const server = require("browser-sync").create();
 
 module.exports = function serve(cb) {
   server.init({
-    server: "dist",
+    server: "docs",
     notify: false,
     open: true,
     cors: true,
@@ -39,7 +39,7 @@ module.exports = function serve(cb) {
     .watch("dev/static/js/**/*.js", gulp.series(script, vendorsJS))
     .on("change", server.reload);
   gulp.watch("dev/pug/**/*.pug", gulp.series(pug2html));
-  gulp.watch("dist/*.html").on("change", server.reload);
+  gulp.watch("docs/*.html").on("change", server.reload);
 
   return cb();
 };

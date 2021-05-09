@@ -36,5 +36,5 @@ module.exports = function spriteSVG() {
         },
       })
     )
-    .pipe(gulp.dest("dist/static/images/sprite"));
+    .pipe(gulp.dest("docs/static/images/sprite"));
 };
