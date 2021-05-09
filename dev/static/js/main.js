@@ -9,6 +9,9 @@ const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile
 );
 const ibgElements = document.querySelectorAll(".ibg");
 const preloader = document.querySelector(".page-preloader");
+const lazyImages = document.querySelectorAll(
+  ".works__image img, .contact__image img"
+);
 
 // ibgElements
 
@@ -52,4 +55,30 @@ document.addEventListener("DOMContentLoaded", function () {
   setTimeout(function () {
     preloader.style.display = "none";
   }, 600);
+
+  // Load lazyImages
+
+  const loadLazyImages = new IntersectionObserver(
+    (entries, observer) => {
+      for (let i = 0; i < entries.length; i++) {
+        const entry = entries[i];
+        if (entry.isIntersecting) {
+          const entrySrc = entry.target.dataset.src;
+          entry.target.setAttribute("src", entrySrc);
+          entry.target.removeAttribute("data-src");
+          entry.target.parentElement.classList.remove("lazy");
+          entry.target.parentElement.style.backgroundImage = `url(${entrySrc})`;
+          observer.unobserve(entry.target);
+        }
+      }
+    },
+    {
+      threshold: 0.1,
+    }
+  );
+
+  for (let i = 0; i < lazyImages.length; i++) {
+    const image = lazyImages[i];
+    loadLazyImages.observe(image);
+  }
 });

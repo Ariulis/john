@@ -7,6 +7,12 @@ body {
           color: $colorPrimary;
         }
       }
+      &__image {
+        transition: all 0.3s ease 0s;
+        &:hover {
+          box-shadow: 0 0 5px 0 $colorDark;
+        }
+      }
     }
   }
 }
@@ -50,6 +56,7 @@ body {
     flex: 0 0 232px;
     min-height: 180px;
     border-radius: 5px;
+    position: relative;
     @media (max-width: $sm) {
       max-width: 100%;
       padding-bottom: 50%;
