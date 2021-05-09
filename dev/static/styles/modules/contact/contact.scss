@@ -1,4 +1,10 @@
 .contact {
+  &__container {
+    margin: 0 auto;
+    max-width: 711px;
+    width: 100%;
+    padding: 0 15px;
+  }
   &__title {
     @extend %card-title;
     display: inline-block;
@@ -7,7 +13,7 @@
     width: 100%;
   }
   &__image {
-    padding-bottom: 55.5%;
+    padding-bottom: 67.5%;
     &_first {
       @include adaptive-value("margin-bottom", 55, 27);
     }

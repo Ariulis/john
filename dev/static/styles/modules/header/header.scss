@@ -48,6 +48,7 @@ body {
       transform: translateX(-110%);
       transition: all 0.3s ease 0s;
       overflow: auto;
+      z-index: 1;
       & > li {
         &:not(:last-child) {
           margin-bottom: 20px;
@@ -74,7 +75,7 @@ body {
     position: relative;
     background-color: transparent;
     display: none;
-    z-index: 1;
+    z-index: 2;
     @media (max-width: $sm) {
       display: block;
     }
