@@ -4,6 +4,7 @@ const imageMinify = require("./imageMinify");
 const svgSprite = require("./spriteSVG");
 const pngSprite = require("./spritePNG");
 const styles = require("./styles");
+const startStyles = require("./startStyles");
 const pug2html = require("./pug");
 const script = require("./scripts");
 const vendorsJS = require("./vendorsJS");
@@ -33,7 +34,7 @@ module.exports = function serve(cb) {
     .watch("dev/static/images/sprite/png/*.png", gulp.series(pngSprite))
     .on("change", server.reload);
   gulp
-    .watch("dev/static/styles/**/*.scss", gulp.series(styles))
+    .watch("dev/static/styles/**/*.scss", gulp.series(styles, startStyles))
     .on("change", server.reload);
   gulp
     .watch("dev/static/js/**/*.js", gulp.series(script, vendorsJS))

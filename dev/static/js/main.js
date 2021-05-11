@@ -8,7 +8,6 @@ const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile
   navigator.userAgent
 );
 const ibgElements = document.querySelectorAll(".ibg");
-const preloader = document.querySelector(".page-preloader");
 const lazyImages = document.querySelectorAll(
   ".works__image img, .contact__image img"
 );
@@ -49,12 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     body.classList.add("pc");
   }
-
-  // preloader
-
-  setTimeout(function () {
-    preloader.style.display = "none";
-  }, 600);
 
   // Load lazyImages
 

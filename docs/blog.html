@@ -6,9 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE = edge"><![endif]-->
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="keywords" content="">
+    <meta name="description" content="Hello world!">
     <link rel="shortcut icon" type="image/x-icon" href="static/images/favicon.ico">
-    <style>.page-preloader{position:fixed;top:0;left:0;width:100%;height:100%;background-color:#fff;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;z-index:2}.page-preloader__spinner{height:30px;width:30px;background:#fff url("./static/images/preloader.gif") center/cover no-repeat}</style>
-    <link rel="stylesheet" type="text/css" href="static/css/styles.css">
+    <style>@import url(https://fonts.googleapis.com/css?family=Heebo:regular,500,700,900&display=swap);.page-preloader{position:fixed;top:0;left:0;width:100%;height:100%;background-color:#fff;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;z-index:2}.page-preloader__spinner{height:30px;width:30px;background:#fff url(static/images/preloader.gif) center/cover no-repeat}*{padding:0;margin:0;border:0}*,::after,::before{-webkit-box-sizing:border-box;box-sizing:border-box}:active,:focus,a:active,a:focus{outline:0}body,html{height:100%;width:100%;line-height:1;-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth;text-rendering:optimizeSpeed}button,input,select,textarea{font-family:inherit}input::-ms-clear{display:none}button{cursor:pointer}button::-moz-focus-inner{padding:0;border:0}a,a:hover,a:visited{text-decoration:none}ol,ul{list-style:none}img{vertical-align:top}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:400}@font-face{font-family:icomoon;src:url(static/fonts/icomoon.woff) format("woff"),url(static/fonts/icomoon.woff2) format("woff2"),url(static/fonts/icomoon.ttf) format("truetype");font-weight:400;font-style:normal;font-display:swap}[class*=" icon-"]::before,[class^=icon-]::before{font-family:icomoon!important;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-twit:before{content:"\e900"}.icon-insta:before{content:"\e901"}.icon-ld:before{content:"\e902"}.icon-fb:before{content:"\e903"}</style>
+    <script>
+      window.onload = function () {
+      	const preloader = document.querySelector(".page-preloader");
+      	setTimeout(function () {
+      		preloader.style.display = "none";
+      	}, 600);
+      }
+    </script>
   </head>
   <body>
     <!-- preloader-->
@@ -18,7 +26,7 @@
       <header class="header"> 
         <div class="header__content">
           <div class="menu header__menu"> 
-            <button class="menu__burger"> <span></span><span></span><span></span>
+            <button class="menu__burger" aria-label="menu burger"><span></span><span></span><span></span>
             </button>
             <nav class="menu__body"> 
               <ul class="menu__list"> 
@@ -71,14 +79,14 @@
       </main>
       <footer class="footer"> 
         <div class="footer__content container"> 
-          <div class="social footer__social"> <a class="social__item icon-fb" href="#"></a><a class="social__item icon-insta" href="#"></a><a class="social__item icon-twit" href="#"></a><a class="social__item icon-ld" href="#"></a>
+          <div class="social footer__social"> <a class="social__item icon-fb" href="#" aria-label="facebook link"></a><a class="social__item icon-insta" href="#" aria-label="instagram link"></a><a class="social__item icon-twit" href="#" aria-label="twitter link"></a><a class="social__item icon-ld" href="#" aria-label="linkedin link"></a>
           </div>
           <div class="footer__copy">Copyright &copy;2020 All rights reserved
           </div>
         </div>
       </footer>
     </div>
-    <script src="https://polyfill.io/v3/polyfill.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/css/styles.css">
     <script src="static/js/main.js"></script>
   </body>
 </html>

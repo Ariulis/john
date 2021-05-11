@@ -12,10 +12,17 @@ html(lang="ru-RU")
 		<![endif]-->
 		meta(name="viewport" content="width=device-width,initial-scale=1")
 		meta(name="keywords" content="")
+		meta(name="description" content="Hello world!")
 		link(rel="shortcut icon" type="image/x-icon" href="static/images/favicon.ico")
-		style.
-			.page-preloader{position:fixed;top:0;left:0;width:100%;height:100%;background-color:#fff;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;z-index:2}.page-preloader__spinner{height:30px;width:30px;background:#fff url("./static/images/preloader.gif") center/cover no-repeat}
-		link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+		style
+			include ../../static/styles/utils/start.css
+		script.
+			window.onload = function () {
+				const preloader = document.querySelector(".page-preloader");
+				setTimeout(function () {
+					preloader.style.display = "none";
+				}, 600);
+			}
 	body
 		// preloader
 		+b.page-preloader
@@ -25,7 +32,8 @@ html(lang="ru-RU")
 			main
 				block content
 			include ../modules/footer/footer
-		//- script(src="static/js/libs.js")
-		script(src="https://polyfill.io/v3/polyfill.min.js")
-		script(src="static/js/main.js")
+		block styles
+			link(rel="stylesheet" type='text/css' href="static/css/styles.css")
 		block script
+			//- script(src="static/js/libs.js")
+			script(src="static/js/main.js")
